@@ -47,10 +47,6 @@ jobs:
         needs: build
 
         steps:
-            - name: Download artifact 📡
-              uses: actions/checkout@v2
-              with:
-                  path: ./out
             - name: Publish to GitHub Pages 🚀
               id: deployment
               uses: actions/deploy-pages@v4
@@ -58,4 +54,4 @@ jobs:
                   branch: master
                   folder: ./out
                   clean: true
-                  token: ${{ secrets.GITHUB_TOKEN }}
+                  artifact_name: out
