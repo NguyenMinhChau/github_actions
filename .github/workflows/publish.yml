@@ -103,8 +103,8 @@ jobs:
               id: deployment
               uses: actions/deploy-pages@v1
               env:
-                  MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-                  MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+                  # MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+                  # MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
                   artifact_name: github-pages
