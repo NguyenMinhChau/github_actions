@@ -33,7 +33,7 @@ jobs:
               run: npx next build
 
             - name: Compress Artifact
-              run: tar -czf out.tar.gz path/to/artifacts
+              run: tar -czf out.tar.gz ./
 
             - name: Checkout upload artifact 🛎️
               uses: actions/checkout@v2
