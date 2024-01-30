@@ -58,9 +58,6 @@ jobs:
               with:
                   path: ./out
 
-            - name: Unzip artifact 📦
-              run: unzip -q ./out/*.zip -d ./out
-
             - name: Publish to GitHub Pages 🚀
               id: deployment
               uses: actions/deploy-pages@v4
