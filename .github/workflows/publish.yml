@@ -46,7 +46,7 @@ jobs:
 
     deploy:
         environment:
-            name: out
+            name: github-pages
             url: ${{ steps.deployment.outputs.page_url }}
 
         runs-on: ubuntu-latest
@@ -57,6 +57,10 @@ jobs:
               uses: actions/download-artifact@v4
               with:
                   path: ./out
+
+            - name: Unzip artifact 📦
+              run: unzip -q ./out/*.zip -d ./out
+
             - name: Publish to GitHub Pages 🚀
               id: deployment
               uses: actions/deploy-pages@v4
