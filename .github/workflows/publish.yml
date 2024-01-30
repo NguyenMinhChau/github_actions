@@ -47,6 +47,10 @@ jobs:
         needs: build
 
         steps:
+            - name: Upload artifact 📡
+              uses: actions/upload-artifact@v4
+              with:
+                  path: ./out
             - name: Publish to GitHub Pages 🚀
               id: deployment
               uses: actions/deploy-pages@v4
