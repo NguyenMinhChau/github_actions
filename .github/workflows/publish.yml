@@ -64,3 +64,5 @@ jobs:
               with:
                   branch: master
                   folder: ./out
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  token: ${{ secrets.GITHUB_TOKEN }}
