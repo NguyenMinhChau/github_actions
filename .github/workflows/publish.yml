@@ -39,7 +39,8 @@ jobs:
                   path: ./out
 
             - name: Upload artifact 📡
-              uses: actions/upload-artifact@v4
+              # uses: actions/upload-artifact@v4
+              uses: actions/upload-pages-artifact@v2
               with:
                   name: github-pages
                   path: ./out
