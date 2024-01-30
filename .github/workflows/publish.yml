@@ -102,8 +102,7 @@ jobs:
             - name: Deploy to GitHub Pages 🚀
               id: deployment
               uses: actions/deploy-pages@v1
-              with:
-                  artifact_name: github-pages
-                  token: ${{ secrets.GITHUB_TOKEN }}
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                  artifact_name: github-pages
