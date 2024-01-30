@@ -49,6 +49,23 @@ jobs:
         steps:
             - name: Publish to GitHub Pages 🚀
               id: deployment
-              uses: JamesIves/github-pages-deploy-action@4.1.1
+              uses: actions/deploy-pages@v4
               with:
-                  folder: out
+                  branch: gh-pages
+                  folder: ./out
+                  clean: true
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./out
+                  force_orphan: true
+                  keep_files: false
+                  commit_message: 'Deployed to GitHub Pages'
+                  enable_jekyll: false
+                  fqdn: ${{ secrets.GITHUB_PAGES_CUSTOM_DOMAIN }}
+                  cname: ${{ secrets.GITHUB_PAGES_CUSTOM_DOMAIN }}
+                  repository_name: ${{ github.repository }}
+                  repository_url: ${{ github.repository }}
+                  target_branch: gh-pages
+                  user_name: ${{ github.actor }}
+                  user_email: ${{ github.actor }}@users.noreply.github.com
+                  allow_empty_commit: false
+                  allow_empty_commit_message: false
