@@ -49,7 +49,4 @@ jobs:
         steps:
             - name: Publish to GitHub Pages 🚀
               id: deployment
-              uses: jamesives/github-pages-deploy-action@4.1.1
-              with:
-                  branch: master
-                  folder: out
+              uses: actions/deploy-pages@v4
