@@ -26,7 +26,7 @@ jobs:
               uses: ./.github/workflows/setup-node
 
             - name: Setup Pages ⚙️
-              uses: actions/configure-pages@v4
+              uses: actions/configure-pages@v3
               with:
                   static_site_generator: next
 
@@ -40,14 +40,11 @@ jobs:
                   path: ./out
 
             - name: Upload artifact 📡
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v1
               with:
                   path: ./out
 
     deploy:
-        permissions:
-            pages: write
-            id-token: write
         environment:
             name: github-pages
             url: ${{ steps.deployment.outputs.page_url }}
@@ -56,11 +53,11 @@ jobs:
         needs: build
 
         steps:
-            - name: Download artifact 📡
-              uses: actions/download-artifact@v4
-              with:
-                  path: ./out
+            # - name: Download artifact 📡
+            #   uses: actions/download-artifact@v4
+            #   with:
+            #       path: ./out
 
             - name: Publish to GitHub Pages 🚀
               id: deployment
-              uses: actions/deploy-pages@v4
+              uses: actions/deploy-pages@v2
