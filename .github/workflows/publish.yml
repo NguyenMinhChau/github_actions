@@ -51,7 +51,4 @@ jobs:
               id: deployment
               uses: actions/deploy-pages@v4
               with:
-                  branch: master
-                  folder: ./out
-                  clean: true
                   artifact_name: out
