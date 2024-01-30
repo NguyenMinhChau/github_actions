@@ -51,20 +51,6 @@ jobs:
               id: deployment
               uses: JamesIves/github-pages-deploy-action@v4
               with:
-                  branch: gh-pages
+                  branch: master
                   folder: out
-                  clean: true
                   token: ${{ secrets.GITHUB_TOKEN }}
-                  repository_name: ${{ github.repository }}
-                  repository_url: ${{ github.repository }}
-                  target_branch: gh-pages
-                  commit_message: Deploy ${{ github.sha }}
-                  allow_empty_commit: true
-                  committer_from_gh: true
-                  enable_jekyll: false
-                  force_orphan: true
-                  fqdn: ${{ secrets.GITHUB_PAGES_CUSTOM_DOMAIN }}
-                  single_commit: true
-                  user_email: ${{ secrets.GITHUB_PAGES_USER_EMAIL }}
-                  user_name: ${{ secrets.GITHUB_PAGES_USER_NAME }}
-                  verbose: true
