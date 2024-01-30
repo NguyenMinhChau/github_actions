@@ -103,6 +103,6 @@ jobs:
               id: deployment
               uses: actions/deploy-pages@v1
               with:
-                  branch: gh-pages
+                  artifact_name: github-pages
                   folder: out
                   token: ${{ secrets.GITHUB_TOKEN }}
