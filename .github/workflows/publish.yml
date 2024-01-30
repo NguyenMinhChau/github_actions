@@ -41,11 +41,12 @@ jobs:
             - name: Upload artifact 📡
               uses: actions/upload-artifact@v4
               with:
+                  name: github-pages
                   path: ./out
 
     deploy:
         environment:
-            name: production
+            name: github-pages
             url: ${{ steps.deployment.outputs.url }}
 
         runs-on: ubuntu-latest
