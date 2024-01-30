@@ -51,4 +51,5 @@ jobs:
               id: deployment
               uses: jamesives/github-pages-deploy-action@4.1.1
               with:
+                  branch: master
                   artifact_name: out
