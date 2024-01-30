@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	basePath: '/github_actions',
-	output: 'out', // <=== enables static exports
+	output: 'export', // <=== enables static exports
 	reactStrictMode: true,
 };
 
