@@ -47,14 +47,9 @@ jobs:
         needs: build
 
         steps:
-            - name: Save state
-              run: echo "{name}={value}" >> $GITHUB_STATE
-
-            - name: Set output
-              run: echo "{name}={value}" >> $GITHUB_OUTPUT
             - name: Publish to GitHub Pages 🚀
               id: deployment
               uses: jamesives/github-pages-deploy-action@4.1.1
               with:
                   branch: master
-                  target-folder: out
+                  folder: out
